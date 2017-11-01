@@ -1,7 +1,45 @@
-<!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" href="styles.css">
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="plotly-latest.min.js"></script>
+	<script type="text/javascript" src="AveragePricePerNeighbourhood.json"></script>
+
+</head>
 <body>
-<h1>Initial Setup</h1>
-<p>Github hosted website</p>
+
+
+	<h1 id="header">Airbnb San Francisco Data</h1>
+	<button type="button"
+		onclick="document.getElementById('time').innerHTML = Date()">
+		Click me to display Date and Time.
+	</button>
+	<p id="time"></p>
+
+	<div id="tester" style="width:600px;height:600px;"></div>
+
+ <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+	<script>
+	//var avgPriceNeighbourhood = JSON.parse(AveragePricePerNeighbourhood);
+	$.getJSON("AveragePricePerNeighbourhood.json", function(json) {
+	document.write("hello")
+    console.log(json); // this will show the info it in firebug console
+	});
+	//document.write(avgPriceNeighbourhood.Marina)
+
+	myDiv = document.getElementById('tester');
+var data = [
+  {
+    x: ['giraffes', 'orangutans', 'monkeys'],
+    y: [20, 14, 23],
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot(myDiv, data);
+	</script>
+
 </body>
 </html>
