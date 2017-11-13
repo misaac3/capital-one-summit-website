@@ -14,5 +14,18 @@ The objective is:
        
 My plan is to use the JavaScript plot.ly API to graph the data from the given csv files.
 
-With python, I will use the csv and json libraries to parse the data and output into a JSON file
-to be used in the web application.
+With python, I will use the csv and json libraries to parse the data and output into a JSON file to be used in the web application.
+
+***A major assumption I have made is any listings with 0 availability in the next 30 days are NOT included in the calculations, but I assume if it is not available, it is booked. For example, a listing with 10 days availble in the next 30 days would be assumed to be booked for 20 days in the next 30.***
+
+I have chose to graph the average price of each neighbourhood, the average review of listings in a certain price range, and the average availbility of each neighbourhood.
+
+The graphs were generated using plot.ly (https://plot.ly/javascript/)
+
+To generate a estimated weekly income from a given geolocation, I calculated the two closest neighbourhoods based on average geolocation and then used the average price and availability of each to create a weighted estimate. The closer the given geolocation is to an avearge neighbourhood geoloaction, the higher it is weighted.
+
+To generate an optimal price, I calculated the price and bookings of the highest revenue generating listings and found the weighted price and expected bookings. The higher the revenue, the higher that listing is weighted.
+
+Photo credits to:
+https://Airbnb.com
+http://www.capoliticalreview.com/wp-content/uploads/2014/11/San-Francisco.jpg
