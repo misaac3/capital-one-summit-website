@@ -335,12 +335,12 @@ function determineEstimatedRevenueFromGeolocation(){
         var estimatedAvailability = (percentOfNhood1 * averageAvailability[indexOfMin1]) + (percentOfNhood2 * averageAvailability[indexOfMin2]);
         str += "<br/>estimatedAvailability = " + estimatedAvailability;
 
-        var estimatedRevenueFor30days = estimatedAvailability * estimatedAveragePrice;
+        var estimatedRevenueFor30days = (30 - estimatedAvailability) * estimatedAveragePrice;
 
         str += "<br/>estimatedRevenueFor30days = " + estimatedRevenueFor30days;
 
         var estimatedWeeklyRevenue = estimatedRevenueFor30days / 30 * 7;
-        var weeklyAvail = estimatedAvailability / 30 * 7;
+        var weeklyAvail = (30 - estimatedAvailability) / 30 * 7;
 
         str += "<br/>estimatedWeeklyRevenue = " + estimatedWeeklyRevenue;
 
@@ -560,7 +560,7 @@ function findOptimalRevenue() {
         str += "<br/>estimatedRevenueFor30days = " + estimatedRevenueFor30days;
         str += "<br/>calculatedRevenue = " + calcRev30;
 
-        var weeklyAvail = estimatedAvailability / 30 * 7;
+        var weeklyAvail = (30 - estimatedAvailability) / 30 * 7;
         var weeklyAvailFloor = weeklyAvail.toFixed(0);
         var weeklyAvailCeiling = weeklyAvail.toFixed(0);
         weeklyAvailCeiling++;
@@ -579,8 +579,8 @@ function findOptimalRevenue() {
         real_str += "<br/>Based on the best revenue generating listings in this area, setting the price at " +
             "<b>$" + roundedEstimatedPrice + "</b>"+ " per night would lead to optimal revenue. <br/>A listing at " +
             "this geolocation would expect to have  " + weeklyAvailFloor +" and " + weeklyAvailCeiling +
-            " days booked a week generating around $" + estimatedAveragePrice.toFixed(2) * weeklyAvailFloor +
-            " and $" + weeklyAvailCeiling * estimatedAveragePrice.toFixed(2) + " of revenue per week.";
+            " days booked a week generating around $" + (estimatedAveragePrice.toFixed(2) * weeklyAvailFloor).toFixed(2) +
+            " and $" + (weeklyAvailCeiling * estimatedAveragePrice.toFixed(2)).toFixed(2) + " of revenue per week.";
         div.innerHTML = real_str;
 
         return estimatedAveragePrice;
