@@ -2,6 +2,7 @@
 	var data = [
   	{
     "type": "bar",
+    "text": "yValue",
     "x": [
         "Bayview",
         "Bernal Heights",
@@ -83,4 +84,12 @@
 }
 	];
 
-Plotly.newPlot(myDiv, data);
+var layout = {
+    title: 'Average Price of Listings in Each Neighbourhood of San Fransisco',
+    xaxis: {title: 'San Fransisco Neighbourhood'},
+    yaxis: {
+        title: 'Average Price (in USD $)'
+    }
+};
+
+Plotly.newPlot(myDiv, data, layout);

@@ -1,0 +1,96 @@
+
+    myDiv = document.getElementById('availabilityNhoodGraphDiv');
+
+    var data = [{
+        "text": "yValue",
+        "type": "bar",
+        "x": [
+            "Bayview",
+            "Bernal Heights",
+            "Castro/Upper Market",
+            "Chinatown",
+            "Crocker Amazon",
+            "Diamond Heights",
+            "Downtown/Civic Center",
+            "Excelsior",
+            "Financial District",
+            "Glen Park",
+            "Golden Gate Park",
+            "Haight Ashbury",
+            "Inner Richmond",
+            "Inner Sunset",
+            "Lakeshore",
+            "Marina",
+            "Mission",
+            "Nob Hill",
+            "Noe Valley",
+            "North Beach",
+            "Ocean View",
+            "Outer Mission",
+            "Outer Richmond",
+            "Outer Sunset",
+            "Pacific Heights",
+            "Parkside",
+            "Potrero Hill",
+            "Presidio",
+            "Presidio Heights",
+            "Russian Hill",
+            "Seacliff",
+            "South of Market",
+            "Treasure Island/YBI",
+            "Twin Peaks",
+            "Visitacion Valley",
+            "West of Twin Peaks",
+            "Western Addition"
+        ],
+        "y": [
+            18.071428571428573,
+            14.987012987012987,
+            14.306818181818182,
+            22.309859154929576,
+            21.608695652173914,
+            16.785714285714285,
+            17.934169278996865,
+            15.041666666666666,
+            20.265060240963855,
+            14.066666666666666,
+            18.166666666666668,
+            16.422907488986784,
+            16.506849315068493,
+            13.74468085106383,
+            18.678571428571427,
+            16.211180124223603,
+            13.90926640926641,
+            14.266233766233766,
+            15.744588744588745,
+            18.973684210526315,
+            18.30666666666667,
+            17.12,
+            14.89655172413793,
+            15.488636363636363,
+            14.960629921259843,
+            18.857142857142858,
+            15.69375,
+            25.75,
+            17.40909090909091,
+            16.934579439252335,
+            12.5,
+            16.44277108433735,
+            19.333333333333332,
+            17.491803278688526,
+            16.192307692307693,
+            17.795180722891565,
+            15.027027027027026
+        ]
+    }];
+
+    var layout = {
+        title: 'Average Availabilty of Listings in Each Neighbourhood of San Fransisco for the Next 30 days',
+        // xaxis: {title: 'San Fransisco Neighbourhood'},
+        yaxis: {
+            title: 'Average Availabilty for the Next 30 days',
+
+        }
+    };
+
+    Plotly.newPlot(myDiv, data, layout);

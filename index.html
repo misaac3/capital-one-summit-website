@@ -3,35 +3,69 @@
 	<link rel="stylesheet" href="styles.css">
 
 	<script type="text/javascript" src="plotly-latest.min.js"></script>
-	<script type="text/javascript" src="AveragePricePerNeighbourhood.json"></script>
+	<script type="text/javascript" src="optimization.js"></script>
+
+	<!--<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
 
 </head>
 <body>
 
 
-	<h1 id="header">Airbnb San Francisco Data</h1>
-	<button type="button"
-		onclick="document.getElementById('time').innerHTML = Date()">
-		Click me to display Date and Time.
-	</button>
-	<p id="time"></p>
+<!--<div id="map"></div>-->
+<!--<script>-->
 
-	<div id="tester" ></div>
+<!--</script>-->
+<!--<script async defer-->
+<!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzmQYKRJerhkQmExz7H_DBnYZ0c9Fc50E&callback=initMap">-->
+<!--</script>-->
+<div id="box" >
+	<div id="content">
+		<h1 id="header">Airbnb San Francisco Data</h1>
+		<div id="banner"></div>
+		<a href="graphs.html" style="font-size: 35px; margin-right: auto; margin-left: auto;">Click here to see some interesting graphs about the data!</a>
+		<br/>
+		<br/>
+		<form id="optimizationForm">
+			Latitude:
+			<br>
+			<input type="text" name="latitude" placeholder="37.000000">
+			<br>
+			Longitude:
+			<br>
+			<input type="text" name="longitude" placeholder="-122.000000">
+			<br>
+		</form>
+		<br/>
+		<br/>
+		<div style="margin-left: auto; margin-right: auto;">Use the form above to enter a geolocation and the buttons below to calculate estimated weekly income and
+			price for optimal revenue!</div>
+		<br/>
+		<br/>
+		<div id="estimate">
+			<button onclick="determineEstimatedRevenueFromGeolocation()">
+				Click to Calculate Price for Estimated Weekly Average Income!
+			</button>
+			<br/>
 
- <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+			<div id="estimateDiv"></div>
+			<br/>
+			<br/>
+		</div>
+		<br/><br/><br/>
+		<div id="optimization">
+			<button onclick="findOptimalRevenue()">
+				Click to Calculate Price for Optimal Revenue!
+			</button>
+			<br/>
+			<div id="optimizationDiv"></div>
+		</div>
+	</div>
 
-	<script type="text/javascript" src="script.js"></script>
-	<script>
-	//var avgPriceNeighbourhood = JSON.parse(AveragePricePerNeighbourhood);
-	// $.getJSON("AveragePricePerNeighbourhood.json", function(json) {
-	// document.write("hello")
- //    console.log(json); // this will show the info it in firebug console
-	// });
-	//document.write(avgPriceNeighbourhood.Marina)
+</div>
 
 
 
-	</script>
 
 </body>
+
 </html>

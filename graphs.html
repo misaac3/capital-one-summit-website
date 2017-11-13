@@ -1,0 +1,119 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="plotly-latest.min.js"></script>
+    <script type="text/javascript" src="optimization.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+</head>
+<div id="box" >
+    <div id="content_graphs">
+        <h1 id="header">Airbnb San Francisco Data</h1>
+        <br/>
+
+        <a href="index.html">Click here to go back home</a>
+        <br/><br/><br/>
+        <button onclick="hideAllGraphs()">Click Here to Hide All Graphs</button>
+        <button onclick="showAllGraphs()">Click Here to Show All Graphs</button>
+
+        <br/>
+        <br/>
+
+
+        <div>
+            <br/>
+            <button onclick="toggleNhoodPriceGraphDiv()">Click me to show or hide the 'Average Price of Listings
+                in Each Neighbourhood of San Fransisco' Graph</button>
+            <br/>
+            <div id="nhoodPriceGraphDiv"></div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div>
+            <br/>
+            <button onclick="toggleReviewPriceGraphDiv()">Click me to show or hide the 'Average Review Score (out of 100) of Prices of listing' Graph</button>
+            <br/>
+            <div id="reviewPriceGraphDiv"></div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div>
+            <br/>
+            <button onclick="toggleAvailabilityNhoodGraphDiv()">Click me to show or hide the 'Average Availabilty of Listings in Each Neighbourhood of San Fransisco for the Next 30 days' Graph</button>
+            <br/>
+            <div id="availabilityNhoodGraphDiv"></div>
+        </div>
+
+
+
+        <script type="text/javascript" src="AveragePricePerNeighbourhood.js"></script>
+
+
+        <script type="text/javascript" src="AverageReviewPerPriceRange.js"></script>
+
+        <script type="text/javascript" src="AverageAvailabilityfor30DaysPerNeighbourhood.js"></script>
+
+
+
+
+        <script>
+            function hideAllGraphs() {
+                var nhoodPriceGraphDiv = document.getElementById("nhoodPriceGraphDiv");
+                var reviewPriceGraphDiv = document.getElementById("reviewPriceGraphDiv");
+                var availabilityNhoodGraphDiv = document.getElementById("availabilityNhoodGraphDiv");
+                var array = [nhoodPriceGraphDiv, reviewPriceGraphDiv, availabilityNhoodGraphDiv];
+
+                nhoodPriceGraphDiv.style.display = "none";
+                reviewPriceGraphDiv.style.display = "none";
+                availabilityNhoodGraphDiv.style.display = "none";
+
+            }
+
+            function showAllGraphs() {
+                var nhoodPriceGraphDiv = document.getElementById("nhoodPriceGraphDiv");
+                var reviewPriceGraphDiv = document.getElementById("reviewPriceGraphDiv");
+                var availabilityNhoodGraphDiv = document.getElementById("availabilityNhoodGraphDiv");
+                var array = [nhoodPriceGraphDiv, reviewPriceGraphDiv, availabilityNhoodGraphDiv];
+
+                nhoodPriceGraphDiv.style.display = "block";
+                reviewPriceGraphDiv.style.display = "block";
+                availabilityNhoodGraphDiv.style.display = "block";
+            }
+
+            function toggleNhoodPriceGraphDiv() {
+                var nhoodPriceGraphDiv = document.getElementById("nhoodPriceGraphDiv");
+                if (nhoodPriceGraphDiv.style.display === "none") {
+                    nhoodPriceGraphDiv.style.display = "block";
+                } else {
+                    nhoodPriceGraphDiv.style.display = "none";
+                }
+            }
+
+            function toggleReviewPriceGraphDiv() {
+                var reviewPriceGraphDiv = document.getElementById("reviewPriceGraphDiv");
+                if (reviewPriceGraphDiv.style.display === "none") {
+                    reviewPriceGraphDiv.style.display = "block";
+                } else {
+                    reviewPriceGraphDiv.style.display = "none";
+                }
+            }
+
+            function toggleAvailabilityNhoodGraphDiv() {
+                var availabilityNhoodGraphDiv = document.getElementById("availabilityNhoodGraphDiv");
+                if (availabilityNhoodGraphDiv.style.display === "none") {
+                    availabilityNhoodGraphDiv.style.display = "block";
+                } else {
+                    availabilityNhoodGraphDiv.style.display = "none";
+                }
+            }
+
+        </script>
+    </div>
+</div>
+</body>
+
+</html>
