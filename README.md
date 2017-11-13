@@ -14,7 +14,7 @@ The objective is:
        
 My plan is to use the JavaScript plot.ly API to graph the data from the given csv files.
 
-With python, I will use the csv and json libraries to parse the data and output into a JSON file to be used in the web application.
+With python, I will use the csv and json libraries to parse the data and output into a JSON file to be used in the web application. The given csv files are assumed to be in the directory as the python scripts.
 
 ***A major assumption I have made is any listings with 0 availability in the next 30 days are NOT included in the calculations, but I assume if it is not available, it is booked. For example, a listing with 10 days availble in the next 30 days would be assumed to be booked for 20 days in the next 30.***
 
